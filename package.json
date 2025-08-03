@@ -1,0 +1,33 @@
+{
+  "name": "is-package-latest",
+  "version": "1.0.0",
+  "description": "Check if a package is the latest version.",
+  "main": "index.js",
+  "exports": {
+    "import": "./index.mjs",
+    "require": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/otoneko1102/is-package-latest.git"
+  },
+  "keywords": [
+    "update",
+    "check",
+    "package",
+    "version"
+  ],
+  "author": "otoneko.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/otoneko1102/is-package-latest/issues"
+  },
+  "homepage": "https://github.com/otoneko1102/is-package-latest#readme",
+  "dependencies": {
+    "axios": "^1.11.0",
+    "semver": "^7.7.2"
+  }
+}
