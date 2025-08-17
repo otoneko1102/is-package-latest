@@ -1,12 +1,15 @@
 # is-package-latest
+
 Check if a package is the latest version.
 
 ## Install
+
 ```bash
 npm install is-package-latest@latest
 ```
 
 ## Usage
+
 ```js
 // CJS (require)
 const { isPackageLatest } = require('is-package-latest');
@@ -21,13 +24,17 @@ import pkg from "./package.json" with { type: "json" };
 ```
 
 ## API
+
 ### Param
+
 #### isPackageLatest(pkg)
+
 - `pkg` `<Object>` An object that has package information.
   - `name` `<string>` Required. The name of the package.
   - `version` `<string>` Required. The current version of the package.
 
 ### Returns
+
 The function returns a `Promise`.
 
 | Name | Type | Description |
