@@ -1,5 +1,5 @@
-const axios = require("axios");
-const semver = require("semver");
+import axios from "axios";
+import * as semver from "semver";
 
 /**
  * @typedef {object} PkgInfo
@@ -30,12 +30,12 @@ const semver = require("semver");
  * @returns {CheckResult} The formatted result object.
  */
 function returnFormat(
-  success,
-  name,
-  isLatest,
-  currentVersion,
-  latestVersion = null,
-  error = null
+  success: boolean,
+  name: string,
+  isLatest: boolean,
+  currentVersion: string,
+  latestVersion: string | null = null,
+  error: string | null = null,
 ) {
   return {
     success,
@@ -52,7 +52,13 @@ function returnFormat(
  * @param {PkgInfo} pkg - An object with package name and version.
  * @returns {Promise<CheckResult>} A promise that has the result.
  */
-async function isPackageLatest(pkg) {
+
+interface PkgInfo {
+  name: string;
+  version: string;
+}
+
+async function isPackageLatest(pkg: PkgInfo) {
   if (!pkg || !pkg.name || !pkg.version) {
     throw new Error('The "pkg" object must have a name and a version.');
   }
@@ -71,7 +77,7 @@ async function isPackageLatest(pkg) {
       packageName,
       isLatest,
       currentVersion,
-      latestVersion
+      latestVersion,
     );
   } catch (e) {
     return returnFormat(
@@ -80,9 +86,10 @@ async function isPackageLatest(pkg) {
       false,
       currentVersion,
       null,
-      e.message
+      // @ts-ignore
+      e?.message,
     );
   }
 }
 
-module.exports = { isPackageLatest };
+export { isPackageLatest };

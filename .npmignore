@@ -1,3 +1,9 @@
-node_modules
-tests
-package-lock.json
+.private/
+node_modules/
+scripts/
+src/
+test/
+
+.prettierrc.json
+jest.config.json
+tsconfig.json
