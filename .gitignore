@@ -1,2 +1,9 @@
-.private/
+# Dependencies
 node_modules/
+
+# Private
+.idea/
+.private/
+
+# Config
+.env
