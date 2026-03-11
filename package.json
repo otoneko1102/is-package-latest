@@ -1,6 +1,6 @@
 {
   "name": "is-package-latest",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Check if a package is the latest version.",
   "type": "module",
   "main": "dist/index.cjs",
